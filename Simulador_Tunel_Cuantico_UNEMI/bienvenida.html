@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenida | Simulador de Túnel Cuántico</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: white;
+      background: #03142b;
+      overflow-x: hidden;
+    }
+
+    /* Fondo animado inspirado en el agua */
+    .agua {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse at 50% 0%,
+          rgba(0, 220, 255, 0.45), transparent 55%),
+        linear-gradient(135deg,
+          #021027, #06416a, #02142e);
+      background-size: 180% 180%;
+      animation: moverAgua 12s ease-in-out infinite alternate;
+    }
+
+    .agua::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-radial-gradient(
+        ellipse at 50% -30%,
+        transparent 0 35px,
+        rgba(115, 232, 255, 0.07) 37px 40px
+      );
+      animation: ondas 10s linear infinite;
+    }
+
+    @keyframes moverAgua {
+      from { background-position: 0% 30%; }
+      to { background-position: 100% 70%; }
+    }
+
+    @keyframes ondas {
+      from { transform: scale(1); opacity: 0.4; }
+      to { transform: scale(1.4); opacity: 0.8; }
+    }
+
+    .particula {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7cf8ff;
+      box-shadow: 0 0 22px #00eaff;
+      animation: flotar 6s ease-in-out infinite alternate;
+    }
+
+    .p1 { top: 20%; left: 15%; }
+    .p2 { top: 70%; left: 80%; animation-delay: 1s; }
+    .p3 { top: 40%; left: 88%; animation-delay: 2s; }
+    .p4 { top: 82%; left: 25%; animation-delay: 3s; }
+
+    @keyframes flotar {
+      from { transform: translateY(0); opacity: 0.3; }
+      to { transform: translateY(-65px); opacity: 1; }
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    .universidad {
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: #a8edff;
+      margin-bottom: 25px;
+    }
+
+    .atomo {
+      font-size: 72px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 20px #00eaff);
+      animation: pulso 3s ease-in-out infinite;
+    }
+
+    @keyframes pulso {
+      50% { transform: scale(1.12); }
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin: 10px 0 20px;
+      text-shadow: 0 0 30px rgba(0, 220, 255, 0.5);
+    }
+
+    .descripcion {
+      max-width: 720px;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #d1eaf5;
+      margin-bottom: 35px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 19px 45px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #00c8ed, #6555ff);
+      color: white;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px rgba(0, 200, 237, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .boton:hover,
+    .boton:focus-visible {
+      transform: scale(1.06);
+      box-shadow: 0 0 45px rgba(0, 230, 255, 0.8);
+    }
+
+    .nota {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #a8c9d9;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="agua" aria-hidden="true"></div>
+
+  <div class="particula p1" aria-hidden="true"></div>
+  <div class="particula p2" aria-hidden="true"></div>
+  <div class="particula p3" aria-hidden="true"></div>
+  <div class="particula p4" aria-hidden="true"></div>
+
+  <main>
+    <div class="universidad">
+      UNIVERSIDAD ESTATAL DE MILAGRO · UNEMI
+    </div>
+
+    <div class="atomo" aria-hidden="true">⚛</div>
+
+    <h1>Explora el fascinante mundo cuántico</h1>
+
+    <p class="descripcion">
+      ¿Puede un electrón atravesar una barrera aunque
+      su energía sea menor que la altura de esta?
+      Descubre el efecto túnel cuántico mediante
+      una experiencia interactiva y educativa.
+    </p>
+
+    <a class="boton" href="integrantes.html">
+      INICIO SIMULADOR
+    </a>
+
+    <p class="nota">
+      Una experiencia educativa de mecánica cuántica
+    </p>
+  </main>
+</body>
+</html>

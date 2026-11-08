@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación del Proyecto | UNEMI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #ffffff;
+      background: #04152d;
+      overflow-x: hidden;
+    }
+
+    .fondo {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 20% 20%,
+          rgba(0, 215, 255, 0.22), transparent 40%),
+        radial-gradient(circle at 80% 75%,
+          rgba(120, 65, 255, 0.23), transparent 40%),
+        linear-gradient(135deg, #031024, #092d50, #04152d);
+      background-size: 160% 160%;
+      animation: fondoAnimado 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes fondoAnimado {
+      from { background-position: 0% 0%; }
+      to { background-position: 100% 100%; }
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 18px;
+    }
+
+    .tarjeta {
+      width: min(100%, 850px);
+      padding: clamp(28px, 5vw, 55px);
+      text-align: center;
+      border: 1px solid rgba(111, 229, 255, 0.35);
+      border-radius: 26px;
+      background: rgba(5, 24, 50, 0.86);
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.35);
+      animation: aparecer 1s ease-out both;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .icono {
+      font-size: 58px;
+      color: #6deaff;
+      margin-bottom: 12px;
+    }
+
+    .universidad {
+      color: #91edff;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin: 22px 0;
+    }
+
+    .subtitulo {
+      color: #c4dbea;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .datos {
+      background: rgba(0, 200, 240, 0.07);
+      border: 1px solid rgba(0, 200, 240, 0.18);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 30px;
+    }
+
+    .datos p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .etiqueta {
+      color: #86eaff;
+      font-weight: 700;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .principal {
+      background: linear-gradient(90deg, #00c8ed, #6c54ff);
+      color: white;
+      box-shadow: 0 0 25px rgba(0, 200, 237, 0.25);
+    }
+
+    .secundario {
+      border: 1px solid #75cce7;
+      color: #c8f4ff;
+    }
+
+    .boton:hover,
+    .boton:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(0, 220, 255, 0.35);
+    }
+
+    .pie {
+      margin-top: 30px;
+      color: #9bb5ca;
+      font-size: 0.85rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fondo" aria-hidden="true"></div>
+
+  <main>
+    <section class="tarjeta">
+      <div class="icono" aria-hidden="true">⚛</div>
+
+      <div class="universidad">
+        UNIVERSIDAD ESTATAL DE MILAGRO
+      </div>
+
+      <h1>Simulador Interactivo del Efecto Túnel Cuántico</h1>
+
+      <p class="subtitulo">
+        Una herramienta educativa para explorar
+        el comportamiento de los electrones
+        frente a barreras de potencial.
+      </p>
+
+      <div class="datos">
+        <p>
+          <span class="etiqueta">Facultad:</span>
+          Educación
+        </p>
+
+        <p>
+          <span class="etiqueta">Carrera:</span>
+          Pedagogía de las Ciencias Experimentales
+        </p>
+
+        <p>
+          <span class="etiqueta">Asignatura:</span>
+          Diseño de Simulación y Animaciones
+        </p>
+
+        <p>
+          <span class="etiqueta">Integrantes:</span>
+          Merizalde y Pino
+        </p>
+
+        <p>
+          <span class="etiqueta">Docente:</span>
+          Msc. Gabriela Barrera
+        </p>
+      </div>
+
+      <div class="botones">
+        <a class="boton secundario" href="bienvenida.html">
+          VOLVER
+        </a>
+
+        <a class="boton principal" href="index.html">
+          INGRESAR AL SIMULADOR →
+        </a>
+      </div>
+
+      <p class="pie">
+        Proyecto académico · Mecánica cuántica
+      </p>
+    </section>
+  </main>
+</body>
+</html>
